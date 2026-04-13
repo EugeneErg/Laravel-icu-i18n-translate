@@ -1,0 +1,28 @@
+{
+  "name": "euge-erg/translate-laravel",
+  "description": "Text translation using multiple neural network APIs",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "EugeneErg\\TranslateLaravel\\": "src/"
+    }
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "illuminate/support": "^13.3",
+    "illuminate/database": "^13.3",
+    "eugene-erg/icu-i18n-translator": "^1.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "infection/extension-installer": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": ["EugeneErg\\TranslateLaravel\\Providers\\ServiceProvider"],
+      "aliases": {}
+    }
+  }
+}
