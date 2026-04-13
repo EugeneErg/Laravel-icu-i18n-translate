@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace EugeneErg\TranslateLaravel\Repositories\Read;
+namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Read;
 
 use EugeneErg\IcuI18nTranslator\Entities\Path;
 use EugeneErg\IcuI18nTranslator\Repositories\ReadPathRepositoryInterface;
 use EugeneErg\IcuI18nTranslator\ValueObjects\GroupId;
 use EugeneErg\IcuI18nTranslator\ValueObjects\PathId;
-use EugeneErg\TranslateLaravel\Models\PathModel;
+use EugeneErg\LaravelIcuI18nTranslate\Models\PathModel;
 
 final readonly class ReadPathRepository implements ReadPathRepositoryInterface
 {

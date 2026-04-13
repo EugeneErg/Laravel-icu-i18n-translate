@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace EugeneErg\TranslateLaravel\Models;
+namespace EugeneErg\LaravelIcuI18nTranslate\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

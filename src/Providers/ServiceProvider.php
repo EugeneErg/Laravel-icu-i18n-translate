@@ -2,19 +2,19 @@
 
 declare(strict_types = 1);
 
-namespace EugeneErg\TranslateLaravel\Providers;
+namespace EugeneErg\LaravelIcuI18nTranslate\Providers;
 
 use EugeneErg\ICUMessageFormatParser\Parser;
 use EugeneErg\IcuI18nTranslator\Formatters\FormatterInterface;
 use EugeneErg\IcuI18nTranslator\Translator;
 use EugeneErg\IcuI18nTranslator\Translators\Contracts\TranslatorInterface;
-use EugeneErg\TranslateLaravel\Repositories\Read\ReadGroupRepository;
-use EugeneErg\TranslateLaravel\Repositories\Read\ReadPathRepository;
-use EugeneErg\TranslateLaravel\Repositories\Read\ReadTranslateRepository;
-use EugeneErg\TranslateLaravel\Repositories\Write\WriteGroupRepository;
-use EugeneErg\TranslateLaravel\Repositories\Write\WriteGroupTranslateRepository;
-use EugeneErg\TranslateLaravel\Repositories\Write\WritePathRepository;
-use EugeneErg\TranslateLaravel\Repositories\Write\WriteTranslateRepository;
+use EugeneErg\LaravelIcuI18nTranslate\Repositories\Read\ReadGroupRepository;
+use EugeneErg\LaravelIcuI18nTranslate\Repositories\Read\ReadPathRepository;
+use EugeneErg\LaravelIcuI18nTranslate\Repositories\Read\ReadTranslateRepository;
+use EugeneErg\LaravelIcuI18nTranslate\Repositories\Write\WriteGroupRepository;
+use EugeneErg\LaravelIcuI18nTranslate\Repositories\Write\WriteGroupTranslateRepository;
+use EugeneErg\LaravelIcuI18nTranslate\Repositories\Write\WritePathRepository;
+use EugeneErg\LaravelIcuI18nTranslate\Repositories\Write\WriteTranslateRepository;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 

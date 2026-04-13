@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace EugeneErg\TranslateLaravel\Repositories\Read;
+namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Read;
 
 use EugeneErg\IcuI18nTranslator\Entities\Translate;
 use EugeneErg\IcuI18nTranslator\Repositories\ReadTranslateRepositoryInterface;
 use EugeneErg\IcuI18nTranslator\ValueObjects\GroupId;
 use EugeneErg\IcuI18nTranslator\ValueObjects\TranslateId;
-use EugeneErg\TranslateLaravel\Models\TranslateModel;
+use EugeneErg\LaravelIcuI18nTranslate\Models\TranslateModel;
 
 final readonly class ReadTranslateRepository implements ReadTranslateRepositoryInterface
 {

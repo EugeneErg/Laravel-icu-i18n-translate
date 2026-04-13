@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace EugeneErg\TranslateLaravel\Repositories\Write;
+namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Write;
 
 use EugeneErg\IcuI18nTranslator\Entities\Translate;
 use EugeneErg\IcuI18nTranslator\Repositories\WriteTranslateRepositoryInterface;
 use EugeneErg\IcuI18nTranslator\ValueObjects\TranslateId;
-use EugeneErg\TranslateLaravel\Models\TranslateModel;
+use EugeneErg\LaravelIcuI18nTranslate\Models\TranslateModel;
 
 final readonly class WriteTranslateRepository implements WriteTranslateRepositoryInterface
 {

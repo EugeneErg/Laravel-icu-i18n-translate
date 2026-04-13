@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace EugeneErg\TranslateLaravel\Repositories\Write;
+namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Write;
 
 use EugeneErg\IcuI18nTranslator\Entities\GroupTranslate;
 use EugeneErg\IcuI18nTranslator\Repositories\WriteGroupTranslateRepositoryInterface;
 use EugeneErg\IcuI18nTranslator\ValueObjects\GroupId;
 use EugeneErg\IcuI18nTranslator\ValueObjects\TranslateId;
-use EugeneErg\TranslateLaravel\Models\GroupTranslateModel;
+use EugeneErg\LaravelIcuI18nTranslate\Models\GroupTranslateModel;
 
 final readonly class WriteGroupTranslateRepository implements WriteGroupTranslateRepositoryInterface
 {

@@ -2,12 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace EugeneErg\TranslateLaravel\Repositories\Read;
+namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Read;
 
 use EugeneErg\IcuI18nTranslator\Entities\Group;
 use EugeneErg\IcuI18nTranslator\Repositories\ReadGroupRepositoryInterface;
 use EugeneErg\IcuI18nTranslator\ValueObjects\GroupId;
-use EugeneErg\TranslateLaravel\Models\GroupModel;
+use EugeneErg\LaravelIcuI18nTranslate\Models\GroupModel;
 
 final readonly class ReadGroupRepository implements ReadGroupRepositoryInterface
 {
