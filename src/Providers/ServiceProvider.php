@@ -23,6 +23,10 @@ final class ServiceProvider extends BaseServiceProvider
     public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__ . '/../../database/Migrations');
+    }
+
+    public function register(): void
+    {
         $this->app->singleton(TranslatorInterface::class . '[]', function () {
             return [];
         });
