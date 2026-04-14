@@ -37,7 +37,7 @@ final class ServiceProvider extends BaseServiceProvider
                 writePathRepository: $app->make(WritePathRepository::class),
                 parser: $app->make(Parser::class),
                 translators: $app->make(TranslatorInterface::class . '[]'),
-                formatters: iterator_to_array($app->tagged(FormatterInterface::class)),
+                formatters: $app->make(FormatterInterface::class . '[]'),
             );
         });
     }
