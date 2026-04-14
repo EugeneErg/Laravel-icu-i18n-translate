@@ -1,5 +1,5 @@
 {
-  "name": "euge-erg/laravel-icu-i18n-translate",
+  "name": "eugene-erg/laravel-icu-i18n-translate",
   "description": "Text translation using multiple neural network APIs",
   "type": "library",
   "license": "MIT",
