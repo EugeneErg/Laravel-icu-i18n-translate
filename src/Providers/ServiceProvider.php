@@ -4,10 +4,10 @@ declare(strict_types = 1);
 
 namespace EugeneErg\LaravelIcuI18nTranslate\Providers;
 
+use EugeneErg\IcuI18nTranslator\FormatterInterface;
+use EugeneErg\IcuI18nTranslator\TranslatorInterface;
 use EugeneErg\ICUMessageFormatParser\Parser;
-use EugeneErg\IcuI18nTranslator\Formatters\FormatterInterface;
 use EugeneErg\IcuI18nTranslator\Translator;
-use EugeneErg\IcuI18nTranslator\Translators\Contracts\TranslatorInterface;
 use EugeneErg\LaravelIcuI18nTranslate\Repositories\Read\ReadGroupRepository;
 use EugeneErg\LaravelIcuI18nTranslate\Repositories\Read\ReadPathRepository;
 use EugeneErg\LaravelIcuI18nTranslate\Repositories\Read\ReadTranslateRepository;
@@ -28,6 +28,9 @@ final class ServiceProvider extends BaseServiceProvider
     public function register(): void
     {
         $this->app->singleton(TranslatorInterface::class . '[]', function () {
+            return [];
+        });
+        $this->app->singleton(FormatterInterface::class . '[]', function () {
             return [];
         });
         $this->app->singleton(Translator::class, function (Container $app) {
