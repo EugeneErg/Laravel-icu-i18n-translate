@@ -18,6 +18,9 @@ final class PathModel extends Model
 
     protected $guarded = ['id'];
 
+    /**
+     * @var array<string, string>
+     */
     protected $casts = [
         'id' => 'int',
         'value' => 'string',

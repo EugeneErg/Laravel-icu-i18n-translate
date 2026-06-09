@@ -18,6 +18,9 @@ final class GroupTranslateModel extends Model
 
     protected $guarded = ['id'];
 
+    /**
+     * @var array<string, string>
+     */
     protected $casts = [
         'group_id' => 'int',
         'translate_id' => 'int',

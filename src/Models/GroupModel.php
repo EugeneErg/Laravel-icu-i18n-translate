@@ -20,6 +20,9 @@ final class GroupModel extends Model
 
     protected $guarded = ['id'];
 
+    /**
+     * @var array<string, string>
+     */
     protected $casts = [
         'id' => 'int',
         'original_pattern' => 'string',

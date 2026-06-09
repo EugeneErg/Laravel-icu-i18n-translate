@@ -8,6 +8,7 @@ includes:
   # - vendor/phpstan/phpstan-phpunit/extension.neon
   # - vendor/phpstan/phpstan-symfony/extension.neon
   # - vendor/phpstan/phpstan-doctrine/extension.neon
+  - ./vendor/larastan/larastan/extension.neon
 
 parameters:
   # Максимальный уровень строгости (0-9)
@@ -49,3 +50,5 @@ parameters:
   reportMagicProperties: true
   reportStaticMethodSignatures: true
   reportWrongPhpDocTypeInVarTag: true
+  bootstrapFiles:
+    - vendor/orchestra/testbench-core/laravel/bootstrap/app.php

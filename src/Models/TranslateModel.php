@@ -17,6 +17,9 @@ final class TranslateModel extends Model
 
     protected $guarded = ['id'];
 
+    /**
+     * @var array<string, string>
+     */
     protected $casts = [
         'id' => 'int',
         'pattern' => 'string',

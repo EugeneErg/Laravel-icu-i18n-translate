@@ -41,25 +41,33 @@ final readonly class ReadTranslateRepository implements ReadTranslateRepositoryI
 
     public function groupListByKey(GroupId $groupId, string $locale): array
     {
-        return array_map([$this, 'makeTranslate'], TranslateModel::query()
+        /** @var array<string, TranslateModel> $result */
+        $result = TranslateModel::query()
             ->join('icu_i18n_group_translates as igt', 'igt.translate_id', '=', 'icu_translates.id')
             ->where('igt.group_id', '=', $groupId->value)
             ->where('icu_translates.locale', '=', $locale)
-            ->select('icu_translates.*')
+            ->select('igt.key', 'icu_translates.*')
             ->get()
-            ->all());
+            ->keyBy('key')
+            ->all();
+
+        return array_map([$this, 'makeTranslate'], $result);
     }
 
     public function keysListByKey(GroupId $groupId, string $locale, array $keys): array
     {
-        return array_map([$this, 'makeTranslate'], TranslateModel::query()
+        /** @var array<string, TranslateModel> $result */
+        $result = TranslateModel::query()
             ->join('icu_i18n_group_translates as igt', 'igt.translate_id', '=', 'icu_translates.id')
             ->where('igt.group_id', '=', $groupId->value)
             ->where('icu_translates.locale', '=', $locale)
             ->whereIn('igt.key', $keys)
-            ->select('icu_translates.*')
+            ->select('igt.key', 'icu_translates.*')
             ->get()
-            ->all());
+            ->keyBy('key')
+            ->all();
+
+        return array_map([$this, 'makeTranslate'], $result);
     }
 
     private function makeTranslate(TranslateModel $model): Translate

@@ -34,6 +34,12 @@ final class ServiceProvider extends BaseServiceProvider
             return [];
         });
         $this->app->singleton(Translator::class, static function (Container $app) {
+            /** @var array<TranslatorInterface> $translators */
+            $translators = $app->make(TranslatorInterface::class . '[]');
+
+            /** @var array<FormatterInterface> $formatters */
+            $formatters = $app->make(FormatterInterface::class . '[]');
+
             return new Translator(
                 readGroupRepository: $app->make(ReadGroupRepository::class),
                 writeGroupRepository: $app->make(WriteGroupRepository::class),
@@ -43,8 +49,8 @@ final class ServiceProvider extends BaseServiceProvider
                 readPathRepository: $app->make(ReadPathRepository::class),
                 writePathRepository: $app->make(WritePathRepository::class),
                 parser: $app->make(Parser::class),
-                translators: $app->make(TranslatorInterface::class . '[]'),
-                formatters: $app->make(FormatterInterface::class . '[]'),
+                translators: $translators,
+                formatters: $formatters,
             );
         });
     }
