@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Read;
 
@@ -12,7 +12,7 @@ use EugeneErg\LaravelIcuI18nTranslate\Models\PathModel;
 
 final readonly class ReadPathRepository implements ReadPathRepositoryInterface
 {
-    public function findRoot(string $value): ?Path
+    public function findRoot(string $value): Path|null
     {
         $result = PathModel::query()
             ->where('value', '=', $value)
@@ -30,7 +30,7 @@ final readonly class ReadPathRepository implements ReadPathRepositoryInterface
             ->all());
     }
 
-    public function findChild(string $value, PathId $parentId): ?Path
+    public function findChild(string $value, PathId $parentId): Path|null
     {
         $result = PathModel::query()
             ->where('value', '=', $value)
@@ -45,7 +45,7 @@ final readonly class ReadPathRepository implements ReadPathRepositoryInterface
         return array_map([$this, 'makePath'], PathModel::query()->limit($limit)->offset($offset)->get()->all());
     }
 
-    public function findById(PathId $id): ?Path
+    public function findById(PathId $id): Path|null
     {
         $result = PathModel::query()->where('id', '=', $id->value)->first();
 

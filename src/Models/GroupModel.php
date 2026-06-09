@@ -1,22 +1,23 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EugeneErg\LaravelIcuI18nTranslate\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * @property int $id
- * @property string $original_pattern
- * @property string $pattern
- * @property string $locale
  * @property string|null $context
  * @property string $hash
+ * @property int $id
+ * @property string $locale
+ * @property string $original_pattern
+ * @property string $pattern
  */
 final class GroupModel extends Model
 {
     protected $table = 'icu_i18n_groups';
+
     protected $guarded = ['id'];
 
     protected $casts = [

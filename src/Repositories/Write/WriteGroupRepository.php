@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Write;
 
@@ -11,7 +11,7 @@ use EugeneErg\LaravelIcuI18nTranslate\Models\GroupModel;
 
 final readonly class WriteGroupRepository implements WriteGroupRepositoryInterface
 {
-    public function create(string $originalPattern, string $pattern, ?string $context, string $locale): Group
+    public function create(string $originalPattern, string $pattern, string|null $context, string $locale): Group
     {
         $hash = md5((string) json_encode(['pattern' => $originalPattern, 'context' => $context]));
         $result = GroupModel::query()->create([

@@ -1,16 +1,15 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class() extends Migration {
     public function up(): void
     {
-        Schema::create('icu_i18n_group_translates', function (Blueprint $table): void {
+        Schema::create('icu_i18n_group_translates', static function (Blueprint $table): void {
             $table->foreignId('group_id')->references('id')->on('icu_i18n_groups')->cascadeOnDelete();
             $table->foreignId('translate_id')->references('id')->on('icu_i18n_translates')->cascadeOnDelete();
             $table->foreignId('source_id')->nullable()->references('id')->on('icu_i18n_translates')->nullOnDelete();

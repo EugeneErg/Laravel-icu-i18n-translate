@@ -24,5 +24,10 @@
       "providers": ["EugeneErg\\TranslateLaravel\\Providers\\ServiceProvider"],
       "aliases": {}
     }
+  },
+  "require-dev": {
+    "laravel/pint": "^1.29",
+    "phpstan/phpstan": "^2.2",
+    "phpunit/phpunit": "^12.5"
   }
 }

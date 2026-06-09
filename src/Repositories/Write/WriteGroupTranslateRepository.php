@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Write;
 
@@ -16,7 +16,7 @@ final readonly class WriteGroupTranslateRepository implements WriteGroupTranslat
         GroupId $groupId,
         TranslateId $translateId,
         string $key,
-        ?TranslateId $sourceId = null,
+        TranslateId|null $sourceId = null,
     ): GroupTranslate {
         $result = GroupTranslateModel::query()->create([
             'group_id' => (int) $groupId->value,
@@ -28,7 +28,7 @@ final readonly class WriteGroupTranslateRepository implements WriteGroupTranslat
         return $this->makeGroupTranslate($result);
     }
 
-    public function deleteByGroupId(GroupId $groupId, ?string $key = null, ?string $locale = null): void
+    public function deleteByGroupId(GroupId $groupId, string|null $key = null, string|null $locale = null): void
     {
         $query = GroupTranslateModel::query()->where('group_id', '=', (int) $groupId->value);
 

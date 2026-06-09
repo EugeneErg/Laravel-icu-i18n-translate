@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Read;
 
@@ -11,7 +11,7 @@ use EugeneErg\LaravelIcuI18nTranslate\Models\GroupModel;
 
 final readonly class ReadGroupRepository implements ReadGroupRepositoryInterface
 {
-    public function findByPattern(string $originalPattern, ?string $context, ?string $locale = null): ?Group
+    public function findByPattern(string $originalPattern, string|null $context, string|null $locale = null): Group|null
     {
         $hash = md5((string) json_encode(['pattern' => $originalPattern, 'context' => $context]));
         $query = GroupModel::query()->where('hash', '=', $hash);
@@ -25,7 +25,7 @@ final readonly class ReadGroupRepository implements ReadGroupRepositoryInterface
         return $result === null ? null : $this->makeGroup($result);
     }
 
-    public function find(GroupId $id): ?Group
+    public function find(GroupId $id): Group|null
     {
         $result = GroupModel::query()->where('id', '=', (int) $id->value)->first();
 

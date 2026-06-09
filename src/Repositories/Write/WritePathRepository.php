@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Write;
 
@@ -12,7 +12,7 @@ use EugeneErg\LaravelIcuI18nTranslate\Models\PathModel;
 
 final readonly class WritePathRepository implements WritePathRepositoryInterface
 {
-    public function create(string $value, ?PathId $parentId = null, ?GroupId $groupId = null,): Path
+    public function create(string $value, PathId|null $parentId = null, GroupId|null $groupId = null): Path
     {
         $result = PathModel::query()->create([
             'value' => $value,

@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace EugeneErg\LaravelIcuI18nTranslate\Repositories\Read;
 
@@ -12,7 +12,7 @@ use EugeneErg\LaravelIcuI18nTranslate\Models\TranslateModel;
 
 final readonly class ReadTranslateRepository implements ReadTranslateRepositoryInterface
 {
-    public function find(string $pattern, ?string $locale = null): ?Translate
+    public function find(string $pattern, string|null $locale = null): Translate|null
     {
         $hash = md5($pattern);
         $query = TranslateModel::query()->where('hash', '=', $hash);
@@ -26,7 +26,7 @@ final readonly class ReadTranslateRepository implements ReadTranslateRepositoryI
         return $result === null ? null : $this->makeTranslate($result);
     }
 
-    public function findByGroup(GroupId $groupId, string $key, string $locale): ?Translate
+    public function findByGroup(GroupId $groupId, string $key, string $locale): Translate|null
     {
         $result = TranslateModel::query()
             ->join('icu_i18n_group_translates as igt', 'igt.translate_id', '=', 'icu_translates.id')
