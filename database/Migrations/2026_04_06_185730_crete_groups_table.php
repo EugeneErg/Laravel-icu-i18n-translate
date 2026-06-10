@@ -15,7 +15,7 @@ return new class() extends Migration {
             $table->text('pattern');
             $table->string('locale', '8');
             $table->text('original_pattern');
-            $table->string('context');
+            $table->string('context')->nullable();
         });
     }
 

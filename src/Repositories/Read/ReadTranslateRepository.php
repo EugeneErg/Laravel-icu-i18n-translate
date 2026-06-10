@@ -29,11 +29,11 @@ final readonly class ReadTranslateRepository implements ReadTranslateRepositoryI
     public function findByGroup(GroupId $groupId, string $key, string $locale): Translate|null
     {
         $result = TranslateModel::query()
-            ->join('icu_i18n_group_translates as igt', 'igt.translate_id', '=', 'icu_translates.id')
+            ->join('icu_i18n_group_translates as igt', 'igt.translate_id', '=', 'icu_i18n_translates.id')
             ->where('igt.group_id', '=', $groupId->value)
-            ->where('icu_translates.locale', '=', $locale)
+            ->where('icu_i18n_translates.locale', '=', $locale)
             ->where('igt.key', '=', $key)
-            ->select('icu_translates.*')
+            ->select('icu_i18n_translates.*')
             ->first();
 
         return $result === null ? null : $this->makeTranslate($result);
@@ -43,10 +43,10 @@ final readonly class ReadTranslateRepository implements ReadTranslateRepositoryI
     {
         /** @var array<string, TranslateModel> $result */
         $result = TranslateModel::query()
-            ->join('icu_i18n_group_translates as igt', 'igt.translate_id', '=', 'icu_translates.id')
+            ->join('icu_i18n_group_translates as igt', 'igt.translate_id', '=', 'icu_i18n_translates.id')
             ->where('igt.group_id', '=', $groupId->value)
-            ->where('icu_translates.locale', '=', $locale)
-            ->select('igt.key', 'icu_translates.*')
+            ->where('icu_i18n_translates.locale', '=', $locale)
+            ->select('igt.key', 'icu_i18n_translates.*')
             ->get()
             ->keyBy('key')
             ->all();
@@ -58,11 +58,11 @@ final readonly class ReadTranslateRepository implements ReadTranslateRepositoryI
     {
         /** @var array<string, TranslateModel> $result */
         $result = TranslateModel::query()
-            ->join('icu_i18n_group_translates as igt', 'igt.translate_id', '=', 'icu_translates.id')
+            ->join('icu_i18n_group_translates as igt', 'igt.translate_id', '=', 'icu_i18n_translates.id')
             ->where('igt.group_id', '=', $groupId->value)
-            ->where('icu_translates.locale', '=', $locale)
+            ->where('icu_i18n_translates.locale', '=', $locale)
             ->whereIn('igt.key', $keys)
-            ->select('igt.key', 'icu_translates.*')
+            ->select('igt.key', 'icu_i18n_translates.*')
             ->get()
             ->keyBy('key')
             ->all();
