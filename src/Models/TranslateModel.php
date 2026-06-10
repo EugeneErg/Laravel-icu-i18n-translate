@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 final class TranslateModel extends Model
 {
+    public $timestamps = false;
+
     protected $table = 'icu_i18n_translates';
 
     protected $guarded = ['id'];

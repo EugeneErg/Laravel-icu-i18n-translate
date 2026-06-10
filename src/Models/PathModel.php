@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 final class PathModel extends Model
 {
+    public $timestamps = false;
+
     protected $table = 'icu_i18n_paths';
 
     protected $guarded = ['id'];

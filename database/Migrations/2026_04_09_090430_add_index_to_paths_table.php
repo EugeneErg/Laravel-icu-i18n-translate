@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Schema;
 return new class() extends Migration {
     public function up(): void
     {
-        DB::statement(<<<'EOD'
-
-                        CREATE UNIQUE INDEX icu_i18n_paths_parent_id_value_unique
-                        ON icu_i18n_paths (COALESCE(parent_id, 0), value)
-                    
-            EOD);
+        DB::statement(
+            <<<'EOD'
+                    CREATE UNIQUE INDEX icu_i18n_paths_parent_id_value_unique
+                    ON icu_i18n_paths (COALESCE(parent_id, 0), value)
+                EOD,
+        );
     }
 
     public function down(): void

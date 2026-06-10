@@ -14,6 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 final class GroupTranslateModel extends Model
 {
+    public $timestamps = false;
+
     protected $table = 'icu_i18n_group_translates';
 
     protected $guarded = ['id'];

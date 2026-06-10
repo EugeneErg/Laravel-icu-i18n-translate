@@ -8,6 +8,11 @@
       "EugeneErg\\LaravelIcuI18nTranslate\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
   "minimum-stability": "stable",
   "require": {
     "illuminate/support": "^13.3",
