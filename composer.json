@@ -26,7 +26,7 @@
   },
   "extra": {
     "laravel": {
-      "providers": ["EugeneErg\\TranslateLaravel\\Providers\\ServiceProvider"],
+      "providers": ["EugeneErg\\LaravelIcuI18nTranslate\\Providers\\ServiceProvider"],
       "aliases": {}
     }
   },
