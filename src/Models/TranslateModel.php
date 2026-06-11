@@ -7,6 +7,7 @@ namespace EugeneErg\LaravelIcuI18nTranslate\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * @property string $hash
  * @property int $id
  * @property string $locale
  * @property string $pattern

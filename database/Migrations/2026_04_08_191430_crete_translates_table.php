@@ -11,9 +11,10 @@ return new class() extends Migration {
     {
         Schema::create('icu_i18n_translates', static function (Blueprint $table): void {
             $table->id();
-            $table->string('hash', 32)->unique();
+            $table->string('hash', 32);
             $table->text('pattern');
             $table->string('locale', '8');
+            $table->unique(['hash', 'locale']);
         });
     }
 

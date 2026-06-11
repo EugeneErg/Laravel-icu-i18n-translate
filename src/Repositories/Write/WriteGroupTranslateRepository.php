@@ -37,7 +37,8 @@ final readonly class WriteGroupTranslateRepository implements WriteGroupTranslat
         }
 
         if ($locale !== null) {
-            $query->where('locale', '=', $locale);
+            $query->join('icu_i18n_translates as t', 't.id', '=', 'icu_i18n_group_translates.translate_id')
+                ->where('t.locale', '=', $locale);
         }
 
         $query->delete();
